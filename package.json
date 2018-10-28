@@ -1,0 +1,8 @@
+{
+  "name": "react-oauth2-login",
+  "version": "0.0.1",
+  "description": "A login form to authenticate with OAuth2",
+  "main": "index.js",
+  "author": "Josh Justice <me@codingitwrong.com>",
+  "license": "Apache-2.0"
+}
