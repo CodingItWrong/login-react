@@ -1,5 +1,5 @@
 {
-  "name": "react-login-form",
+  "name": "@codingitwrong/react-login",
   "version": "0.0.1",
   "description": "A login form to authenticate with OAuth2",
   "main": "index.js",
