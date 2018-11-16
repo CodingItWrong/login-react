@@ -1,13 +1,13 @@
-const React = require('react');
-const Auth = require('./Auth');
-const LoginFormContainer = require('./LoginFormContainer');
+import React from 'react';
+import Auth from './Auth';
+import LoginFormContainer from './LoginFormContainer';
 
 const DEFAULT_PATH = '/oauth/token';
 const DEFAULT_ERROR_MESSAGE = 'An error occurred while logging in. Please try again.';
 
 // Allows a user to log in using OAuth
 // Both the login form and the logged-in content are passed in
-module.exports = class OAuth extends React.Component {
+export default class OAuth extends React.Component {
   attemptLogin = ({ username, password }) => {
     const {
       httpClient,

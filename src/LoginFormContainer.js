@@ -1,6 +1,6 @@
-const React = require('react');
+import React, { Component } from 'react';
 
-module.exports = class LoginForm extends React.Component {
+export default class LoginForm extends Component {
   state = {
     username: '',
     password: '',

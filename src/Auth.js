@@ -1,9 +1,9 @@
-const React = require('react');
-const LoginFormContainer = require('./LoginFormContainer');
+import React from 'react';
+import LoginFormContainer from './LoginFormContainer';
 
 // A generic controller component handling login
 // Takes in the login form, the method to use to attempt login, and the logged-in content
-module.exports = class Auth extends React.Component {
+export default class Auth extends React.Component {
   state = { loggedIn: false }
 
   attemptLogin = (loginParams) => {
