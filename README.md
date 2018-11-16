@@ -5,7 +5,7 @@ Login form container components for React.
 ## Installation
 
 ```sh
-$ yarn install @codingitwrong/react-login
+$ yarn add @codingitwrong/react-login
 ```
 
 ## Usage
