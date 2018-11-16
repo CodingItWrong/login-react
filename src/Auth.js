@@ -1,5 +1,4 @@
 const React = require('react');
-import { Text } from 'react-native';
 const LoginFormContainer = require('./LoginFormContainer');
 
 // A generic controller component handling login
