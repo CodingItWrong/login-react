@@ -7,7 +7,15 @@ export default class LoginForm extends Component {
     error: null,
   }
 
-  handleChange = field => text => {
+  handleChange = field => param => {
+    let text;
+
+    if (param.target) {
+      text = param.target.value;
+    } else {
+      text = param;
+    }
+
     this.setState({
       [field]: text,
       error: false,
