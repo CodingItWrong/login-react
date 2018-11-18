@@ -1,6 +1,6 @@
 # @codingitwrong/react-login
 
-Login form container components for React.
+Login form container components for React and React Native.
 
 ## Installation
 
@@ -43,6 +43,8 @@ function attemptLogin({ username, password }) {
   return Promise.resolve(); // login succeeded
 }
 ```
+
+Note that `handleChange()` can also be used for React Native `onChangeText` handlers for `TextInput` and third-party text input components.
 
 ### <OAuth />
 
