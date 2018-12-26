@@ -52,11 +52,11 @@ export default class OAuth extends React.Component {
   render() {
     return (
       <Auth
+        initiallyLoggedIn={this.props.initiallyLoggedIn}
         renderForm={this.props.renderForm}
+        renderLoggedIn={this.props.renderLoggedIn}
         attemptLogin={this.attemptLogin}
-      >
-        {this.props.children}
-      </Auth>
+      />
     );
   }
 }

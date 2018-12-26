@@ -16,11 +16,11 @@ The following components are made available:
 
 ```jsx
 <Auth
+  initiallyLoggedIn={false}
   renderForm={renderForm}
   attemptLogin={attemptLogin}
->
-  <p>You are now logged in!</p>
-</Auth>
+  renderLoggedIn={renderLoggedIn}
+/>
 
 function renderForm({
   username,
@@ -42,6 +42,15 @@ function renderForm({
 function attemptLogin({ username, password }) {
   return Promise.resolve(); // login succeeded
 }
+
+function renderLoggedIn({ logOut }) {
+  return (
+    <div>
+      <p>You are now logged in!</p>
+      <button onClick={logOut}>Log Out</button>
+    </div>
+  );
+}
 ```
 
 Note that `handleChange()` can also be used for React Native `onChangeText` handlers for `TextInput` and third-party text input components.
@@ -52,13 +61,13 @@ Instead of implementing your own `attemptLogin` function, if you are connecting 
 
 ```jsx
 <OAuth
+  initiallyLoggedIn={false}
   httpClient={httpClient}
   path={path}
   handleAccessToken={setToken}
   renderForm={renderForm}
->
-  {children}
-</OAuth>
+  renderLoggedIn={renderLoggedIn}
+/>
 
 const httpClient = axios.create({
   baseURL: 'https://api.example.com',
