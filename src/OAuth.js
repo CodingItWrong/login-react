@@ -3,37 +3,34 @@ import Auth from './Auth';
 import LoginFormContainer from './LoginFormContainer';
 
 const DEFAULT_PATH = '/oauth/token';
-const DEFAULT_ERROR_MESSAGE = 'An error occurred while logging in. Please try again.';
+const DEFAULT_ERROR_MESSAGE =
+  'An error occurred while logging in. Please try again.';
 
 // Allows a user to log in using OAuth
 // Both the login form and the logged-in content are passed in
 export default class OAuth extends React.Component {
   attemptLogin = ({ username, password }) => {
-    const {
-      httpClient,
-      path = DEFAULT_PATH,
-    } = this.props;
+    const { httpClient, path = DEFAULT_PATH } = this.props;
 
-    return httpClient.post(path, {
-      grant_type: 'password',
-      username,
-      password,
-    })
+    return httpClient
+      .post(path, {
+        grant_type: 'password',
+        username,
+        password,
+      })
       .then(this.handleSuccessResponse)
       .catch(this.handleErrorResponse);
-  }
+  };
 
-  handleSuccessResponse = (response) => {
+  handleSuccessResponse = response => {
     const { handleAccessToken } = this.props;
 
     const { access_token } = response.data;
     handleAccessToken(access_token);
-  }
+  };
 
-  handleErrorResponse = (error) => {
-    const {
-      defaultErrorMessage = DEFAULT_ERROR_MESSAGE,
-    } = this.props;
+  handleErrorResponse = error => {
+    const { defaultErrorMessage = DEFAULT_ERROR_MESSAGE } = this.props;
 
     let message;
     if (
@@ -47,7 +44,7 @@ export default class OAuth extends React.Component {
       message = defaultErrorMessage;
     }
     throw message;
-  }
+  };
 
   render() {
     return (
