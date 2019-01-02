@@ -5,7 +5,7 @@ export default class LoginForm extends Component {
     username: '',
     password: '',
     error: null,
-  }
+  };
 
   handleChange = field => param => {
     let text;
@@ -20,19 +20,18 @@ export default class LoginForm extends Component {
       [field]: text,
       error: false,
     });
-  }
+  };
 
-  handleLogIn = (event) => {
+  handleLogIn = event => {
     event.preventDefault();
 
     const { username, password } = this.state;
 
     // attemptLogin must return a promise that rejects with an error message string if login fails
-    this.props.attemptLogin({ username, password })
-      .catch((error) => {
-        this.setState({ error });
-      });
-  }
+    this.props.attemptLogin({ username, password }).catch(error => {
+      this.setState({ error });
+    });
+  };
 
   render() {
     const { handleLogIn, handleChange } = this;
